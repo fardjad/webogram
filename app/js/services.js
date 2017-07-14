@@ -5046,3 +5046,30 @@ angular.module('myApp.services', ['myApp.i18n', 'izhukov.utils'])
       })
     }
   })
+
+  .service('StealthManager', function (Storage) {
+    var stealth = true
+
+    readStealth()
+
+    return {
+      isStealth: isStealth,
+      setStealth: setStealth
+    }
+
+    function readStealth () {
+      Storage.get('misc_stealth').then(function (value) {
+        stealth = value || false
+      })
+    }
+
+    function isStealth () {
+      return stealth
+    }
+
+    function setStealth (value) {
+      Storage.set({misc_stealth: value})
+      stealth = value || false
+    }
+  })
+

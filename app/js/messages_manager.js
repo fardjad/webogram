@@ -9,7 +9,7 @@
 
 angular.module('myApp.services')
 
-  .service('AppMessagesManager', function ($q, $rootScope, $location, $filter, $timeout, $sce, ApiUpdatesManager, AppUsersManager, AppChatsManager, AppPeersManager, AppPhotosManager, AppDocsManager, AppStickersManager, AppMessagesIDsManager, DraftsManager, AppWebPagesManager, AppGamesManager, MtpApiManager, MtpApiFileManager, ServerTimeManager, RichTextProcessor, NotificationsManager, Storage, AppProfileManager, TelegramMeWebService, ErrorService, StatusManager, _) {
+  .service('AppMessagesManager', function ($q, $rootScope, $location, $filter, $timeout, $sce, ApiUpdatesManager, AppUsersManager, AppChatsManager, AppPeersManager, AppPhotosManager, AppDocsManager, AppStickersManager, AppMessagesIDsManager, DraftsManager, AppWebPagesManager, AppGamesManager, MtpApiManager, MtpApiFileManager, ServerTimeManager, RichTextProcessor, NotificationsManager, Storage, AppProfileManager, TelegramMeWebService, ErrorService, StatusManager, StealthManager, _) {
     var messagesStorage = {}
     var messagesForHistory = {}
     var messagesForDialogs = {}
@@ -1124,6 +1124,10 @@ angular.module('myApp.services')
 
     function readHistory (peerID) {
       // console.trace('start read')
+      if (StealthManager.isStealth()) {
+        return
+      }
+
       var isChannel = AppPeersManager.isChannel(peerID)
       var historyStorage = historiesStorage[peerID]
       var foundDialog = getDialogByPeerID(peerID)[0]
@@ -1216,6 +1220,10 @@ angular.module('myApp.services')
     }
 
     function readMessages (messageIDs) {
+      if (StealthManager.isStealth()) {
+        return
+      }
+
       MtpApiManager.invokeApi('messages.readMessageContents', {
         id: messageIDs
       }).then(function (affectedMessages) {
