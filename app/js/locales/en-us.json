@@ -84,6 +84,8 @@
 	"settings_modal_password_email_pending_cancel": "Abort",
 	"settings_modal_password_email_pending_cancel_mobile": "Abort password",
 
+	"settings_modal_stealth": "Stealth mode",
+
 	"password_delete_title": "Turn password off",
 	"password_change_title": "Two-Step Verification",
 	"password_current_placeholder": "Enter current password",

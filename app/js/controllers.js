@@ -2302,7 +2302,7 @@ angular.module('myApp.controllers', ['myApp.i18n'])
     $scope.$on('user_update', angular.noop)
   })
 
-  .controller('AppImSendController', function ($rootScope, $q, $scope, $timeout, MtpApiManager, Storage, AppProfileManager, AppChatsManager, AppUsersManager, AppPeersManager, AppDocsManager, AppStickersManager, AppMessagesManager, AppInlineBotsManager, MtpApiFileManager, DraftsManager, RichTextProcessor) {
+  .controller('AppImSendController', function ($rootScope, $q, $scope, $timeout, MtpApiManager, Storage, AppProfileManager, AppChatsManager, AppUsersManager, AppPeersManager, AppDocsManager, AppStickersManager, AppMessagesManager, AppInlineBotsManager, MtpApiFileManager, DraftsManager, RichTextProcessor, StealthManager) {
     $scope.$watch('curDialog.peer', resetDraft)
     $scope.$on('user_update', angular.noop)
     $scope.$on('peer_draft_attachment', applyDraftAttachment)
@@ -2903,7 +2903,7 @@ angular.module('myApp.controllers', ['myApp.i18n'])
     }
 
     function onTyping () {
-      if (AppPeersManager.isBroadcast($scope.curDialog.peerID)) {
+      if (StealthManager.isStealth() || AppPeersManager.isBroadcast($scope.curDialog.peerID)) {
         return false
       }
       MtpApiManager.invokeApi('messages.setTyping', {
@@ -4080,7 +4080,7 @@ angular.module('myApp.controllers', ['myApp.i18n'])
     }
   })
 
-  .controller('SettingsModalController', function ($rootScope, $scope, $timeout, $modal, AppUsersManager, AppChatsManager, AppPhotosManager, MtpApiManager, Storage, NotificationsManager, MtpApiFileManager, PasswordManager, ApiUpdatesManager, ChangelogNotifyService, LayoutSwitchService, WebPushApiManager, AppRuntimeManager, ErrorService, _) {
+  .controller('SettingsModalController', function ($rootScope, $scope, $timeout, $modal, AppUsersManager, AppChatsManager, AppPhotosManager, MtpApiManager, Storage, NotificationsManager, MtpApiFileManager, PasswordManager, ApiUpdatesManager, ChangelogNotifyService, LayoutSwitchService, WebPushApiManager, AppRuntimeManager, ErrorService, StealthManager, _) {
     $scope.profile = {}
     $scope.photo = {}
     $scope.version = Config.App.version
@@ -4351,6 +4351,14 @@ angular.module('myApp.controllers', ['myApp.i18n'])
     $scope.switchBackToDesktop = Config.Mobile && !Config.Navigator.mobile
     $scope.switchToDesktop = function () {
       LayoutSwitchService.switchLayout(false)
+    }
+
+    $scope.misc = {}
+    $scope.misc.stealth = StealthManager.isStealth()
+    $scope.toggleStealth = function () {
+      var newValue = !$scope.misc.stealth
+      $scope.misc.stealth = newValue
+      StealthManager.setStealth(newValue)
     }
   })
 
