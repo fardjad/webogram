@@ -24,30 +24,10 @@ img/iphone_home120.png
 img/iphone_startup.png
 img/logo_share.png
 img/sound_a.mp3
+js/app.js
 nacl/mtproto_crypto.nmf
 nacl/mtproto_crypto.pexe
-js/app.js
 img/changelog/card_wecandoit.png
-img/icons/AboutLogos.png
-img/icons/AboutLogos_2x.png
-img/icons/General.png
-img/icons/General_2x.png
-img/icons/IconsetSmiles.png
-img/icons/IconsetSmiles_2x.png
-img/icons/IconsetW.png
-img/icons/IconsetW_2x.png
-img/icons/Major.png
-img/icons/Major_2x.png
-img/icons/MobileIcons.png
-img/icons/MobileIcons_2x.png
-img/icons/PhotoIcons.png
-img/icons/PhotoIcons_2x.png
-img/icons/ProfileIcons.png
-img/icons/ProfileIcons_2x.png
-img/icons/icon.svg
-vendor/closure/long.js
-vendor/cryptoJS/crypto.js
-vendor/leemon_bigint/bigint.js
 img/placeholders/DialogListAvatarSystem@2x.png
 img/placeholders/GroupAvatar1@2x.png
 img/placeholders/GroupAvatar2@2x.png
@@ -65,8 +45,23 @@ img/placeholders/UserAvatar7@2x.png
 img/placeholders/UserAvatar8@2x.png
 img/placeholders/VideoThumbConversation.gif
 img/placeholders/VideoThumbModal.gif
-vendor/jsbn/jsbn_combined.js
-vendor/rusha/rusha.js
+img/icons/AboutLogos.png
+img/icons/AboutLogos_2x.png
+img/icons/General.png
+img/icons/General_2x.png
+img/icons/IconsetSmiles.png
+img/icons/IconsetSmiles_2x.png
+img/icons/IconsetW.png
+img/icons/IconsetW_2x.png
+img/icons/Major.png
+img/icons/Major_2x.png
+img/icons/MobileIcons.png
+img/icons/MobileIcons_2x.png
+img/icons/PhotoIcons.png
+img/icons/PhotoIcons_2x.png
+img/icons/ProfileIcons.png
+img/icons/ProfileIcons_2x.png
+img/icons/icon.svg
 js/lib/bin_utils.js
 js/lib/crypto_worker.js
 js/lib/polyfill.js
@@ -78,6 +73,11 @@ js/locales/it-it.json
 js/locales/nl-nl.json
 js/locales/pt-br.json
 js/locales/ru-ru.json
+vendor/cryptoJS/crypto.js
+vendor/closure/long.js
+vendor/jsbn/jsbn_combined.js
+vendor/leemon_bigint/bigint.js
+vendor/rusha/rusha.js
 vendor/angular/i18n/angular-locale_de-de.js
 vendor/angular/i18n/angular-locale_en-us.js
 vendor/angular/i18n/angular-locale_es-es.js
@@ -91,4 +91,4 @@ http://*
 https://*
 *
 
-# hash: e19cff1fa3766b8b69e93bdb7f8e83c738c9809e78428270755c1d9109f34f08
+# hash: 04292865df39f47638054da217f636f609c1d26f78026aa1915a7c058ba54ebf

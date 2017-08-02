@@ -1457,6 +1457,8 @@ img.im_message_document_thumb{max-width:100px;max-height:100px;vertical-align:mi
 .audio_player_volume_slider .tg_slider_track_fill{background:#6490b1;height:4px;width:0}
 .audio_player_progress_wrap{overflow:hidden}
 .audio_player_progress_wrap .tg_down_progress{margin-top:5px}
+.audio_player_media{position:absolute;visibility:hidden}
+.audio_player_media canvas{display:none}
 .im_message_download_progress_wrap,.im_message_upload_progress_wrap{margin-top:5px;width:200px}
 .im_message_document_thumbed .im_message_document_actions,.im_message_document_thumbed .im_message_document_name_wrap,.im_message_document_thumbed .im_message_download_progress_wrap,.im_message_document_thumbed .im_message_upload_progress_wrap{width:207px}
 .im_message_document_thumbed .im_message_document_name{max-width:110px}
