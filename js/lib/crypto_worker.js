@@ -12,9 +12,7 @@ importScripts(
   '../../vendor/leemon_bigint/bigint.js',
   '../../vendor/closure/long.js',
   '../../vendor/cryptoJS/crypto.js',
-  '../../vendor/rusha/rusha.js',
-  '../../vendor/recorderjs/recorder.js',
-  '../../vendor/recorderjs/encoder_worker.js'
+  '../../vendor/rusha/rusha.js'
 )
 
 onmessage = function (e) {
