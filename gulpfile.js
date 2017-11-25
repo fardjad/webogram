@@ -98,7 +98,9 @@ gulp.task('copy', function () {
     gulp.src(['app/nacl/mtproto_crypto.pexe', 'app/nacl/mtproto_crypto.nmf'])
       .pipe(gulp.dest('dist/nacl/')),
     gulp.src('app/js/background.js')
-      .pipe(gulp.dest('dist/js'))
+      .pipe(gulp.dest('dist/js')),
+    gulp.src(['app/js/recorderjs/encoder_worker.js', 'app/js/recorderjs/recorder.js'])
+      .pipe(gulp.dest('dist/vendor/recorderjs/'))
   )
 })
 
